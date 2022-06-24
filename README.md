@@ -12,7 +12,7 @@ taking a fully functioning Google Books API search engine built with a RESTful A
 ## Installation
 1. Clone the project to your machine 
 ```
-git clone [URL] && cd port-react
+git clone [URL] && cd datajaml-mern
 ```
 2. Install npm packages
 ```
