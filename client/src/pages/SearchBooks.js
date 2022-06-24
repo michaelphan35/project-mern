@@ -2,10 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
 
 import Auth from '../utils/auth';
-import { saveBook, searchGoogleBooks } from '../utils/API';
+import { searchGoogleBooks } from '../utils/API';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 
+import { SAVE_BOOK } from '../utils/mutations';
+import { useMutation } from '@apollo/react-hooks';
+
 const SearchBooks = () => {
+  const [saveBook, { error }] = useMutation(SAVE_BOOK);
   // create state for holding returned google api data
   const [searchedBooks, setSearchedBooks] = useState([]);
   // create state for holding our search field data
@@ -65,10 +69,12 @@ const SearchBooks = () => {
     }
 
     try {
-      const response = await saveBook(bookToSave, token);
+      const { data } = await saveBook({
+        variables: { input: bookToSave }
+      });
 
-      if (!response.ok) {
-        throw new Error('something went wrong!');
+      if (error) {
+        throw new Error('Something went wrong!');
       }
 
       // if book successfully saves to user's account, save book id to state
@@ -128,7 +134,7 @@ const SearchBooks = () => {
                       className='btn-block btn-info'
                       onClick={() => handleSaveBook(book.bookId)}>
                       {savedBookIds?.some((savedBookId) => savedBookId === book.bookId)
-                        ? 'This book has already been saved!'
+                        ? 'Book already saved!'
                         : 'Save this Book!'}
                     </Button>
                   )}
