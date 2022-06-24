@@ -1,25 +1,25 @@
 // see SignupForm.js for comments
 import React, { useState } from 'react';
-import Auth from '../utils/auth';
 import { Form, Button, Alert } from 'react-bootstrap';
+
+// import { loginUser } from '../utils/API';
+// add login from query GQL
+import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
-import { useMutation } from '@apollo/react-hooks';
+import Auth from '../utils/auth';
 
 const LoginForm = () => {
-  const [login, { error }] = useMutation(LOGIN_USER);
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
-
+  // Login_user import mutations from front and back end
+  const [login, { error }] = useMutation(LOGIN_USER);
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setUserFormData({
-      ...userFormData,
-      [name]: value
-    });
+    setUserFormData({ ...userFormData, [name]: value });
   };
 
-  const handleFormSubmit = async event => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     // check if form has everything (as per react-bootstrap docs)
@@ -30,12 +30,18 @@ const LoginForm = () => {
     }
 
     try {
-      const { data } = await login({
-        variables: { ...userFormData }
-      });
+      const { data } = await login({ variables: { ...userFormData } });
+      // const response = await loginUser(userFormData);
+
+      // if (!response.ok) {
+      //   throw new Error('something went wrong!');
+      // }
+
+      // const { token, user } = await response.json();
+      // console.log(user);
       Auth.login(data.login.token);
-    } catch (e) {
-      console.error(e);
+    } catch (err) {
+      console.error(err);
       setShowAlert(true);
     }
 
@@ -83,7 +89,6 @@ const LoginForm = () => {
           variant='success'>
           Submit
         </Button>
-        {error && <div>Login failed</div>}
       </Form>
     </>
   );

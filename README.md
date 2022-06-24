@@ -26,7 +26,7 @@ npm run develop
 
 ## Technologies
 - ReactJS
-- ES6
+- GraphQL
 - MongoDB
 - NodeJS
 - Express
