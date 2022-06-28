@@ -1,7 +1,7 @@
 {
   "name": "mern-app-group-project-3",
   "version": "1.0.0",
-  "description": "",
+  "description": "Music Search Engine\r # Technologies used\r - React\r - NodeJS\r - ExpressJS\r - GraphQL\r - Spotify API",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
@@ -11,12 +11,23 @@
     "build": "cd client && npm run build"
   },
   "keywords": [],
-  "author": "",
+  "author": "Hector Palacios <paquito1981@outlook.com>",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0"
   },
   "dependencies": {
-    "react-router-dom": "^6.4.0-pre.3"
-  }
+    "jest": "^28.1.1",
+    "mongoose": "^6.4.0",
+    "react-router-dom": "^6.4.0-pre.3",
+    "sequelize": "^6.21.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paquito81/project-mern.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Paquito81/project-mern/issues"
+  },
+  "homepage": "https://github.com/Paquito81/project-mern#readme"
 }
