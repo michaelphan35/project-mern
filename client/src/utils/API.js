@@ -1,12 +1,18 @@
-export const searchSpotify = (artist_name, token) => {
-  console.log(artist_name);
-  return fetch(
-    `https://api.spotify.com/v1/search`, {
-    method: "GET",
-    query: artist_name,
-    headers: {
-      Authorization: `Bearer ${token}`,
+export const searchSpotify = (query, accessToken) => {
+  fetch(`https://api.spotify.com/v1/search?q=${query}&type=track&market=US&limit=10`, {
+    method: 'GET', headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + accessToken
     }
-  }
-  );
+  })
+    .then((response) => {
+      console.log(response.json().then(
+        (data) => {
+          console.log(data);
+          return data;
+        }
+      ));
+    });
+
 };

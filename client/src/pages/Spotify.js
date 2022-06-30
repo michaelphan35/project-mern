@@ -4,7 +4,7 @@ import Cookies from 'js-cookie'
 import { SpotifyAuth, Scopes } from 'react-spotify-auth'
 import 'react-spotify-auth/dist/index.css'
 
-import SearchTracks from './SearchTracks';
+import SearchTracks from '../components/SearchTracks';
 
 const Spotify = () => {
 
