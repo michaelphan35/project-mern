@@ -13,15 +13,12 @@ const Spotify = () => {
         <div className='app'>
             {token ? (
                 <SpotifyApiContext.Provider value={token}>
-                    {/* Your Spotify Code here */}
-                    <p>You are authorized with token: {token}</p>
                     <SearchTracks spotiToken={token} />
                 </SpotifyApiContext.Provider>
             ) : (
-                // Display the login page
                 <SpotifyAuth
                     redirectUri='http://localhost:3000/'
-                    clientID='f384da78955e4419a9a3df59c19acab0'
+                    clientID='d70a2585decd4d669c6434824b695fb4'
                     scopes={[Scopes.userReadPrivate, 'user-read-email']} // either style will work
                     onAccessToken={(token) => setToken(token)}
                 />

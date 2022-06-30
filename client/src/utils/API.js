@@ -7,12 +7,12 @@ export const searchSpotify = (query, accessToken) => {
     }
   })
     .then((response) => {
-      console.log(response.json().then(
+      response.json().then(
         (data) => {
           console.log(data);
           return data;
         }
-      ));
+      );
     });
 
 };
