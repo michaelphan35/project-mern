@@ -56,9 +56,9 @@ const SearchTracks = () => {
     }
   };
 
-  // create function to handle saving a song to our database
+  // create function to handle saving a track to our database
   const handleSaveTrack = async (trackId) => {
-    // find the song in `searchedTracks` state by the matching id
+    // find the track in `searchedTracks` state by the matching id
     const trackToSave = searchedTracks.find((track) => track.trackId === trackId);
 
     // get token
@@ -75,7 +75,7 @@ const SearchTracks = () => {
       //   throw new Error('something went wrong!');
       // }
 
-      // if song successfully saves to user's account, save song id to state
+      // if track successfully saves to user's account, save track id to state
       setSavedTrackIds([...savedTrackIds, trackToSave.trackId]);
     } catch (err) {
       console.error(err);

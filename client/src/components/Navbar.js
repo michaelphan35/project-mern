@@ -23,11 +23,11 @@ const AppNavbar = () => {
               <Nav.Link as={Link} to='/'>
                 Search For Music
               </Nav.Link>
-              {/* if user is logged in show saved songs and logout */}
+              {/* if user is logged in show saved tracks and logout */}
               {Auth.loggedIn() ? (
                 <>
                   <Nav.Link as={Link} to='/saved'>
-                    See Your Saved Songs
+                    See Your Saved tracks
                   </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>

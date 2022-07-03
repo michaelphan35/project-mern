@@ -25,7 +25,7 @@ mutation addUser($username: String!, $email: String!, $password: String!) {
 `;
 
 export const SAVE_TRACK = gql`
-mutation saveTrack($trackData: SongInput!) {
+mutation saveTrack($trackData: TrackInput!) {
     saveTrack(trackData: $trackData)
         {
             _id
@@ -45,8 +45,8 @@ mutation saveTrack($trackData: SongInput!) {
 `;
 
 export const REMOVE_TRACK = gql`
-    mutation removeSong($trackId: ID!) {
-        removeSong(trackId:$trackId) {
+    mutation remove($trackId: ID!) {
+        remove(trackId:$trackId) {
             _id
             username
             email
