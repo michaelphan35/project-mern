@@ -45,21 +45,21 @@ mutation saveTrack($trackData: TrackInput!) {
 `;
 
 export const REMOVE_TRACK = gql`
-    mutation remove($trackId: ID!) {
-        remove(trackId:$trackId) {
-            _id
-            username
-            email
-            trackCount
-            savedTracks {
-                # _id
-                trackId
-                artists
-                image
-                link
-                title
-                description
-            }
+mutation removeTrack($trackId: ID!) {
+    removeTrack(trackId:$trackId) {
+        _id
+        username
+        email
+        trackCount
+        savedTracks {
+            # _id
+            trackId
+            artists
+            image
+            link
+            title
+            description
         }
+    }
 }
 `;

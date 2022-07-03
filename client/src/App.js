@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Spotify from './pages/Spotify';
+import Favorites from './pages/Favorites';
 import Navbar from './components/Navbar';
 
 import { setContext } from '@apollo/client/link/context'
@@ -37,6 +38,7 @@ function App() {
           <Navbar />
           <Switch>
             <Route exact path='/' component={Spotify} />
+            <Route exact path='/favorite-tracks' component={Favorites} />
             <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
           </Switch>
         </>

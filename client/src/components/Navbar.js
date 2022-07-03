@@ -26,7 +26,7 @@ const AppNavbar = () => {
               {/* if user is logged in show saved tracks and logout */}
               {Auth.loggedIn() ? (
                 <>
-                  <Nav.Link as={Link} to='/saved'>
+                  <Nav.Link as={Link} to='/favorite-tracks'>
                     See Your Saved tracks
                   </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
