@@ -31,6 +31,7 @@ const LoginForm = () => {
 
     try {
       const { data } = await login({ variables: { ...userFormData } });
+      console.log(data);
       // const response = await loginUser(userFormData);
 
       // if (!response.ok) {
