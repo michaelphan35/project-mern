@@ -19,6 +19,7 @@ const Spotify = () => {
                 </SpotifyApiContext.Provider>
             ) : (
                 <Modal
+                    className='spotify-modal'
                     size='sm'
                     show={showModal}
                     onHide={() => setShowModal(true)}

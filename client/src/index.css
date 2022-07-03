@@ -16,19 +16,19 @@ h6 {
   font-style: italic;
 }
 
-.modal {
+.spotify-modal {
   display: flex !important;
 }
 
-.modal-dialog {
+.spotify-modal .modal-dialog {
   align-self: center;
 }
 
-.modal-body {
+.spotify-modal .modal-body {
   padding: 0;
 }
 
-.modal-body button {
+.spotify-modal .modal-body button {
   width: 100%;
 }
 
