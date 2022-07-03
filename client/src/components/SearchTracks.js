@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Cookies from 'js-cookie'
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
 
 import Auth from '../utils/auth';
@@ -7,7 +8,8 @@ import { useMutation } from '@apollo/client';
 import { SAVE_TRACK } from '../utils/mutations'
 import { saveTrackIds, getSavedTrackIds } from '../utils/localStorage';
 
-const SearchTracks = (props) => {
+const SearchTracks = () => {
+  const token = useState(Cookies.get("spotifyAuthToken"));
   // create state for holding returned api data
   const [searchedTracks, setSearchedTracks] = useState([]);
   // create state for holding our search field data
@@ -32,7 +34,7 @@ const SearchTracks = (props) => {
 
     try {
 
-      const response = await searchSpotify(searchInput, props.spotiToken);
+      const response = await searchSpotify(searchInput, token);
 
       if (!response.ok) {
         throw new Error('something went wrong!');
