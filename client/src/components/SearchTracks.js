@@ -34,24 +34,23 @@ const SearchTracks = () => {
 
     try {
 
-      const response = await searchSpotify(searchInput, token);
+      const data = await searchSpotify(searchInput, token);
 
-      if (!response.ok) {
-        throw new Error('something went wrong!');
-      }
+      // if (!response.ok) {
+      //   throw new Error('something went wrong!');
+      // }
 
-      const { items } = await response.json();
-
-      const trackData = items.map((track) => ({
+      const trackData = data.tracks.items.map((track) => ({
         trackId: track.id,
-        artists: track.volumeInfo.artists || ['No artist to display'],
-        title: track.volumeInfo.title,
-        description: track.volumeInfo.description,
-        image: track.volumeInfo.imageLinks?.thumbnail || '',
+        artists: track.artists[0].name || ['No artist to display'],
+        title: track.name,
+        description: track.href,
+        image: track.album.images[0].url || '',
       }));
+      console.log(trackData);
 
       setSearchedTracks(trackData);
-      setSearchInput('');
+      //setSearchInput('');
     } catch (err) {
       console.error(err);
     }
@@ -114,7 +113,7 @@ const SearchTracks = () => {
       <Container>
         <h2>
           {searchedTracks.length
-            ? `Viewing ${searchedTracks.length} results:`
+            ? `Displaying ${searchedTracks.length} results:`
             : ''}
         </h2>
         <CardColumns>
