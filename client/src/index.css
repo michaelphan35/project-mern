@@ -15,3 +15,24 @@ h6 {
   font-weight: 300;
   font-style: italic;
 }
+
+.modal {
+  display: flex !important;
+}
+
+.modal-dialog {
+  align-self: center;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.modal-body button {
+  width: 100%;
+}
+
+.modal-body button:hover {
+  transform: none;
+  background-color: #2c894c;
+}
