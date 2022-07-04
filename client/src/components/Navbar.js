@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
+import { RiSpotifyLine } from 'react-icons/ri';
+
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
 
@@ -15,6 +17,9 @@ const AppNavbar = () => {
       <Navbar bg='dark' variant='dark' expand='lg'>
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
+
+            <RiSpotifyLine className='logo' />
+            {/* <FontAwesomeIcon icon='spotify' /> */}
             Spotify Music Search
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
