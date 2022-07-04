@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
 import { AiOutlineDelete } from 'react-icons/ai';
 
@@ -9,6 +10,7 @@ import { REMOVE_TRACK } from '../utils/mutations';
 import { removeTrackId } from '../utils/localStorage';
 
 const Favorites = () => {
+
     const { loading, data } = useQuery(GET_ME)
     const userData = data?.me || [];
     const [deleteTrack] = useMutation(REMOVE_TRACK);
@@ -34,6 +36,11 @@ const Favorites = () => {
     // if data isn't here yet, say so
     if (loading) {
         return <h2>LOADING...</h2>;
+    }
+
+    if (!Auth.loggedIn()) {
+        // not logged in so redirect to login page with the return url
+        return <Redirect to={{ pathname: '/'}} />
     }
 
     return (
