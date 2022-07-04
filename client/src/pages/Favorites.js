@@ -56,7 +56,7 @@ const Favorites = () => {
                                 {track.image ? <Card.Img src={track.image} alt={`The cover for ${track.title}`} variant='top' /> : null}
                                 <Card.Body>
                                     <Card.Title>{track.title}</Card.Title>
-                                    <p className='small'>Authors: {track.authors}</p>
+                                    <p className='small'>Artists: {track.artists}</p>
                                     <Card.Text>{track.description}</Card.Text>
                                     <Button className='btn-block btn-danger' onClick={() => handleDeleteTrack(track.trackId)}>
                                        <AiOutlineDelete className='btn-icon' /> Remove from favorite tracks

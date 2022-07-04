@@ -15,7 +15,7 @@ const Spotify = () => {
         <div className='app'>
             {token ? (
                 <SpotifyApiContext.Provider value={token}>
-                    <SearchTracks spotiToken={token} />
+                    <SearchTracks />
                 </SpotifyApiContext.Provider>
             ) : (
                 <Modal

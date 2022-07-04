@@ -126,7 +126,7 @@ const SearchTracks = () => {
                 ) : null}
                 <Card.Body>
                   <Card.Title>{track.title}</Card.Title>
-                  <p className='small'>artists:{track.artists} </p>
+                  <p className='small'>Artists: {track.artists} </p>
 
                   {/* <Card.Text>
                   <audio controls>
