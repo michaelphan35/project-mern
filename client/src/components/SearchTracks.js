@@ -51,7 +51,7 @@ const SearchTracks = () => {
       console.log(trackData);
 
       setSearchedTracks(trackData);
-      //setSearchInput('');
+      setSearchInput('');
     } catch (err) {
       console.error(err);
     }
