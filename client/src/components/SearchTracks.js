@@ -125,8 +125,13 @@ const SearchTracks = () => {
                 ) : null}
                 <Card.Body>
                   <Card.Title>{track.title}</Card.Title>
-                  <p className='small'>artists: {track.artists}</p>
-                  <Card.Text>{track.description}</Card.Text>
+                  <p className='small'>artists:{track.artists} </p>
+                  
+                  {/* <Card.Text>
+                  <audio controls>
+                  <source src={track.description} type='audio/mpeg' />
+                  </audio>
+                  </Card.Text> */}
                   {Auth.loggedIn() && (
                     <Button
                       disabled={savedTrackIds?.some((savedTrackId) => savedTrackId === track.trackId)}
