@@ -1,6 +1,6 @@
 export const searchSpotify = async (query, accessToken) => {
   try {
-    const response = await fetch(`https://api.spotify.com/v1/search?q=${query}&type=track&market=US&limit=10`, {
+    const response = await fetch(`https://api.spotify.com/v1/search?q=${query}&type=track&market=US`, {
       method: 'GET', headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',

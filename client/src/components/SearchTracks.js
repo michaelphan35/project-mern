@@ -85,7 +85,7 @@ const SearchTracks = () => {
   return (
 
     <>
-      <Jumbotron fluid className='text-light bg-dark'>
+      <Jumbotron fluid className='text-light bg-light'>
         <Container>
           <h1>Search for Music</h1>
           <Form onSubmit={handleFormSubmit}>
@@ -126,7 +126,7 @@ const SearchTracks = () => {
                 <Card.Body>
                   <Card.Title>{track.title}</Card.Title>
                   <p className='small'>artists:{track.artists} </p>
-                  
+
                   {/* <Card.Text>
                   <audio controls>
                   <source src={track.description} type='audio/mpeg' />
