@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Cookies from 'js-cookie'
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
+import { BsSearch } from 'react-icons/bs';
 
 import Auth from '../utils/auth';
 import { searchSpotify } from '../utils/API';
@@ -102,7 +103,7 @@ const SearchTracks = () => {
               </Col>
               <Col xs={12} md={4}>
                 <Button type='submit' variant='success' size='lg'>
-                  Submit Search
+                <BsSearch className='btn-icon' /> Submit
                 </Button>
               </Col>
             </Form.Row>
@@ -135,11 +136,11 @@ const SearchTracks = () => {
                   {Auth.loggedIn() && (
                     <Button
                       disabled={savedTrackIds?.some((savedTrackId) => savedTrackId === track.trackId)}
-                      className='btn-block btn-info'
+                      className='btn-block btn-success'
                       onClick={() => handleSaveTrack(track.trackId)}>
                       {savedTrackIds?.some((savedTrackId) => savedTrackId === track.trackId)
-                        ? 'This track has already been saved!'
-                        : 'Save this track!'}
+                        ? 'Track is already in favorites'
+                        : 'Add to favorite tracks'}
                     </Button>
                   )}
                 </Card.Body>

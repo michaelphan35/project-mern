@@ -32,7 +32,7 @@ const AppNavbar = () => {
               {Auth.loggedIn() ? (
                 <>
                   <Nav.Link as={Link} to='/favorite-tracks'>
-                    See Your Saved tracks
+                    See Your Favorite Tracks
                   </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>

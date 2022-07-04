@@ -1,5 +1,6 @@
 import React from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
+import { AiOutlineDelete } from 'react-icons/ai';
 
 import Auth from '../utils/auth';
 import { useMutation, useQuery } from '@apollo/client';
@@ -37,16 +38,16 @@ const Favorites = () => {
 
     return (
         <>
-            <Jumbotron fluid className='text-light bg-dark'>
+            <Jumbotron fluid className='text-dark bg-light'>
                 <Container>
-                    <h1>Viewing saved tracks</h1>
+                    <h1>Viewing your favorite tracks</h1>
                 </Container>
             </Jumbotron>
             <Container>
                 <h2>
                     {userData.savedTracks.length
                         ? `Viewing ${userData.savedTracks.length} saved ${userData.savedTracks.length === 1 ? 'track' : 'tracks'}:`
-                        : 'You have no saved tracks!'}
+                        : 'No favorite tracks found'}
                 </h2>
                 <CardColumns>
                     {userData.savedTracks.map((track) => {
@@ -58,7 +59,7 @@ const Favorites = () => {
                                     <p className='small'>Authors: {track.authors}</p>
                                     <Card.Text>{track.description}</Card.Text>
                                     <Button className='btn-block btn-danger' onClick={() => handleDeleteTrack(track.trackId)}>
-                                        Delete this track!
+                                       <AiOutlineDelete className='btn-icon' /> Remove from favorite tracks
                                     </Button>
                                 </Card.Body>
                             </Card>
