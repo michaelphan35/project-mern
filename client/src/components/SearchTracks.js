@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import Cookies from 'js-cookie'
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
 import { BsSearch } from 'react-icons/bs';
-
+// import { Box } from "@chakra-ui/react"
 import Auth from '../utils/auth';
 import { searchSpotify } from '../utils/API';
 import { useMutation } from '@apollo/client';
@@ -127,7 +127,7 @@ const SearchTracks = () => {
                 <Card.Body>
                   <Card.Title>{track.title}</Card.Title>
                   <p className='small'>Artists: {track.artists} </p>
-
+              
                   {/* <Card.Text>
                   <audio controls>
                   <source src={track.description} type='audio/mpeg' />

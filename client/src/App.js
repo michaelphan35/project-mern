@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Spotify from './pages/Spotify';
 import Favorites from './pages/Favorites';
 import Navbar from './components/Navbar';
-
 import { setContext } from '@apollo/client/link/context'
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 
@@ -30,6 +29,7 @@ const client = new ApolloClient({
 
 function App() {
   return (
+  
     <ApolloProvider
       client={client}
     >
@@ -44,6 +44,7 @@ function App() {
         </>
       </Router>
     </ApolloProvider>
+    
   );
 }
 
