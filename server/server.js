@@ -1,8 +1,9 @@
 const express = require('express');
 const path = require('path');
 const db = require('./config/connection');
-const dotenv = require('dotenv');
-dotenv.config();
+const dotenv = require('dotenv').config();
+const { graphqlHTTP } = require('express-graphql');
+const schema = require('./schemas');
 
 // Apollo Server import Typedefs and resolvers
 const { ApolloServer } = require('apollo-server-express');
@@ -35,6 +36,14 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
+app.use(
+  '/graphql',
+  graphqlHTTP({
+    schema,
+    graphiql: process.env.NODE_ENV === 'development'
+  })
+)
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
@@ -43,6 +52,6 @@ app.get('*', (req, res) => {
 // app.use(routes);
 
 db.once('open', () => {
-  app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}`));
+  app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
   console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
 });
