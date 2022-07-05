@@ -9,6 +9,8 @@ import { useMutation } from '@apollo/client';
 import { SAVE_TRACK } from '../utils/mutations'
 import { saveTrackIds, getSavedTrackIds } from '../utils/localStorage';
 
+import MusicPlayer from './musicPlayer';
+
 const SearchTracks = () => {
   const token = useState(Cookies.get("spotifyAuthToken"));
   // create state for holding returned api data
@@ -103,13 +105,15 @@ const SearchTracks = () => {
               </Col>
               <Col xs={12} md={4}>
                 <Button type='submit' variant='success' size='lg'>
-                <BsSearch className='btn-icon' /> Submit
+                  <BsSearch className='btn-icon' /> Submit
                 </Button>
               </Col>
             </Form.Row>
           </Form>
         </Container>
       </Jumbotron>
+
+      {/* <MusicPlayer /> */}
 
       <Container>
         <h2>

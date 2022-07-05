@@ -20,7 +20,8 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "react-spotify-api": "^3.0.0",
-    "react-spotify-auth": "^1.4.3"
+    "react-spotify-auth": "^1.4.3",
+    "react-spotify-web-playback": "^0.10.0"
   },
   "scripts": {
     "start": "react-scripts start",
