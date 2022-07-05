@@ -47,6 +47,13 @@ const SearchTracks = () => {
         title: track.name,
         description: track.href,
         image: track.album.images[0].url || '',
+        // trackId: data.tracks.items[0].id,
+        // artists: data.tracks.items[0].artists.items[0].name,//track.artists[0].name || ['No artist to display'],
+        // title: data.tracks.items[0].name track.name,
+        // description: track.href,
+        // image: track.album.images[0].url || '',
+
+
       }));
       console.log(trackData);
 
