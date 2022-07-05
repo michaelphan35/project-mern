@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Cookies from 'js-cookie'
+// import Cookies from 'js-cookie'
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
 import { BsSearch } from 'react-icons/bs';
 
@@ -10,7 +10,7 @@ import { SAVE_TRACK } from '../utils/mutations'
 import { saveTrackIds, getSavedTrackIds } from '../utils/localStorage';
 
 const SearchTracks = () => {
-  const token = useState(Cookies.get("spotifyAuthToken"));
+  // const token = useState(Cookies.get("spotifyAuthToken"));
   // create state for holding returned api data
   const [searchedTracks, setSearchedTracks] = useState([]);
   // create state for holding our search field data
@@ -35,18 +35,18 @@ const SearchTracks = () => {
 
     try {
 
-      const data = await searchSpotify(searchInput, token);
+      const data = await searchSpotify(searchInput);
 
       // if (!response.ok) {
       //   throw new Error('something went wrong!');
       // }
 
-      const trackData = data.tracks.items.map((track) => ({
-        trackId: track.id,
-        artists: track.artists[0].name || ['No artist to display'],
-        title: track.name,
-        description: track.href,
-        image: track.album.images[0].url || '',
+      const trackData = data.tracks.items.map(() => ({
+        trackId: data.tracks.items[0].id,
+        // artists: data.tracks.items[0].artists.items[0].name,//track.artists[0].name || ['No artist to display'],
+        title: data.tracks.items[0].name//track.name,
+        //description: track.href,
+        // image: track.album.images[0].url || '',
       }));
       console.log(trackData);
 
