@@ -6,7 +6,7 @@
 -[License](#license)<br/>
 -[Contribution](#contribution)<br/>
 -[Screenshots](#screenshots)<br/>
--[Heroku](#heroku)<br/>
+-[Demo](#demo)<br/>
 -[Questions](#questions)<br/>
     
 ## Description    
@@ -41,5 +41,4 @@ Michael Phan: [github](https://github.com/michaelphan35)<br/>
 ![App on ttartup](./media/web_on_startup.jpg?raw=true "App on startup")
 ![Image of song being saved on favorites](./media/Capture1.JPG?raw=true "Song saved")
 
-## Heroku:
-Click to deploy app on heroku: 
+## [Demo](https://group-project-spotify.herokuapp.com/)
