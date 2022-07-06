@@ -40,7 +40,7 @@ const Favorites = () => {
 
     if (!Auth.loggedIn()) {
         // not logged in so redirect to login page with the return url
-        return <Redirect to={{ pathname: '/'}} />
+        return <Redirect to={{ pathname: '/' }} />
     }
 
     return (
@@ -58,15 +58,16 @@ const Favorites = () => {
                 </h2>
                 <CardColumns>
                     {userData.savedTracks.map((track) => {
+
                         return (
                             <Card key={track.trackId} border='dark'>
                                 {track.image ? <Card.Img src={track.image} alt={`The cover for ${track.title}`} variant='top' /> : null}
                                 <Card.Body>
                                     <Card.Title>{track.title}</Card.Title>
                                     <p className='small'>Artists: {track.artists}</p>
-                                    <Card.Text>{track.description}</Card.Text>
+                                    {/* <Card.Text>{track.description}</Card.Text> */}
                                     <Button className='btn-block btn-danger' onClick={() => handleDeleteTrack(track.trackId)}>
-                                       <AiOutlineDelete className='btn-icon' /> Remove from favorite tracks
+                                        <AiOutlineDelete className='btn-icon' /> Remove from favorite tracks
                                     </Button>
                                 </Card.Body>
                             </Card>

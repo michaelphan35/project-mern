@@ -8,6 +8,7 @@ import { searchSpotify } from '../utils/API';
 import { useMutation } from '@apollo/client';
 import { SAVE_TRACK } from '../utils/mutations'
 import { saveTrackIds, getSavedTrackIds } from '../utils/localStorage';
+import { listArtists } from '../utils/helpers'
 
 const SearchTracks = () => {
   const token = useState(Cookies.get("spotifyAuthToken"));
@@ -19,8 +20,9 @@ const SearchTracks = () => {
   // create state to hold saved savedTrackIdId values
   const [savedTrackIds, setSavedTrackIds] = useState(getSavedTrackIds());
 
+
+
   // set up useEffect hook to save `savedTrackIds` list to localStorage on component unmount
-  // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
   useEffect(() => {
     return () => saveTrackIds(savedTrackIds);
   });
@@ -37,23 +39,12 @@ const SearchTracks = () => {
 
       const data = await searchSpotify(searchInput, token);
 
-      // if (!response.ok) {
-      //   throw new Error('something went wrong!');
-      // }
-
       const trackData = data.tracks.items.map((track) => ({
         trackId: track.id,
-        artists: track.artists[0].name || ['No artist to display'],
+        artists: listArtists(track.artists),
         title: track.name,
         description: track.href,
-        image: track.album.images[0].url || '',
-        // trackId: data.tracks.items[0].id,
-        // artists: data.tracks.items[0].artists.items[0].name,//track.artists[0].name || ['No artist to display'],
-        // title: data.tracks.items[0].name track.name,
-        // description: track.href,
-        // image: track.album.images[0].url || '',
-
-
+        image: track.album.images[0].url || ''
       }));
       console.log(trackData);
 
@@ -78,10 +69,6 @@ const SearchTracks = () => {
 
     try {
       await saveTrack({ variables: { trackData: trackToSave } });
-
-      // if (!response.ok) {
-      //   throw new Error('something went wrong!');
-      // }
 
       // if track successfully saves to user's account, save track id to state
       setSavedTrackIds([...savedTrackIds, trackToSave.trackId]);
@@ -110,7 +97,7 @@ const SearchTracks = () => {
               </Col>
               <Col xs={12} md={4}>
                 <Button type='submit' variant='success' size='lg'>
-                <BsSearch className='btn-icon' /> Submit
+                  <BsSearch className='btn-icon' /> Submit
                 </Button>
               </Col>
             </Form.Row>
@@ -134,12 +121,6 @@ const SearchTracks = () => {
                 <Card.Body>
                   <Card.Title>{track.title}</Card.Title>
                   <p className='small'>Artists: {track.artists} </p>
-
-                  {/* <Card.Text>
-                  <audio controls>
-                  <source src={track.description} type='audio/mpeg' />
-                  </audio>
-                  </Card.Text> */}
                   {Auth.loggedIn() && (
                     <Button
                       disabled={savedTrackIds?.some((savedTrackId) => savedTrackId === track.trackId)}
