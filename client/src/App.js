@@ -3,6 +3,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Spotify from './pages/Spotify';
 import Favorites from './pages/Favorites';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import SignupForm from './components/SignupForm';
+import SearchTracks from './components/SearchTracks';
+
 
 import { setContext } from '@apollo/client/link/context'
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
