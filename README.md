@@ -1,7 +1,7 @@
 # Group Project 3
 
 ## Table of Contents
--[MVP](#mvp)<br/>
+-[Description](#description)<br/>
 -[Installation](#installation)<br/>
 -[License](#license)<br/>
 -[Contribution](#contribution)<br/>
@@ -9,9 +9,9 @@
 -[Heroku](#heroku)<br/>
 -[Questions](#questions)<br/>
     
-## MVP
+## Description    
 
-Users can search tracks and save tracks data to their favorite music.
+This application aims to allow users to search up tracks names of their favorite songs and save it onto there account so that they can reference it later if they ever forget what song they used to listen to. Utilizing the Spotify API, users that are resgistered with our database, can search up tracks from artists around the world and save them in "favorite tracks" to got back and view later. 
 
 ## Technologies used
 - [ReactJS](https://reactjs.org/docs/getting-started.html)
@@ -39,7 +39,6 @@ Michael Phan: [github](https://github.com/michaelphan35)<br/>
 ## Screenshots
 ![Login Prompt](./media/login_prompt.jpg?raw=true "Login prompt Screenshot")
 ![App on ttartup](./media/web_on_startup.jpg?raw=true "App on startup")
-![Seach Function](./media/web_after_searching.jpg?raw=true "Search Function")
 
 ## Heroku:
-[Click to deploy app on heroku](https://note-trackr2.herokuapp.com)
+Click to deploy app on heroku: 
