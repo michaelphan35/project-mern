@@ -39,6 +39,7 @@ Michael Phan: [github](https://github.com/michaelphan35)<br/>
 ## Screenshots
 ![Login Prompt](./media/login_prompt.jpg?raw=true "Login prompt Screenshot")
 ![App on ttartup](./media/web_on_startup.jpg?raw=true "App on startup")
+![Image of song being saved on favorites](./media/Capture1.jpg?raw=true "Song saved")
 
 ## Heroku:
 Click to deploy app on heroku: 
