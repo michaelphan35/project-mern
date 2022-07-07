@@ -37,8 +37,8 @@ Hector Palacios: [github](https://github.com/Paquito81)<br/>
 Michael Phan: [github](https://github.com/michaelphan35)<br/>
 
 ## Screenshots
-![Login Prompt](./media/login_prompt.jpg?raw=true "Login prompt Screenshot")
-![App on ttartup](./media/web_on_startup.jpg?raw=true "App on startup")
-![Image of song being saved on favorites](./media/Capture1.JPG?raw=true "Song saved")
+![Login Prompt](./media/spotify-authorization.jpg)
+![App on ttartup](./media/saved-tracks.JPG)
+![Image of song being saved on favorites](./media/saved-tracks.JPG)
 
 ## [Demo](https://aqueous-bayou-14461.herokuapp.com/)
