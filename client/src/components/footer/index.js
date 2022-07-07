@@ -9,10 +9,12 @@ const footer = () => {
                     <Button color='facebook' floated='right' size='mini'>
                         <Icon name='facebook' /> Facebook
                     </Button>
+                    <br/>
                     
                     <Button color='twitter' floated='right' size='mini'>
                         <Icon name='twitter' /> Twitter
                     </Button>
+                    <br/>
                     <Button color='instagram' floated='right' size='mini'>
                         <Icon name='instagram' /> Instagram
                     </Button>
