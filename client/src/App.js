@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Spotify from './pages/Spotify';
 import Favorites from './pages/Favorites';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Footer from './components/footer/index';
 // import SignupForm from './components/SignupForm';
 // import SearchTracks from './components/SearchTracks';
+import Contact from "./components/contacts"
 
 
 import { setContext } from '@apollo/client/link/context'
@@ -45,6 +46,7 @@ function App() {
             <Route exact path='/favorite-tracks' component={Favorites} />
             <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
           </Switch>
+          <Contact/>
           <Footer/>
         </>
       </Router>
