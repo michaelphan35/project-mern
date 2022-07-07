@@ -4,8 +4,8 @@ import Spotify from './pages/Spotify';
 import Favorites from './pages/Favorites';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import SignupForm from './components/SignupForm';
-import SearchTracks from './components/SearchTracks';
+// import SignupForm from './components/SignupForm';
+// import SearchTracks from './components/SearchTracks';
 
 
 import { setContext } from '@apollo/client/link/context'
@@ -45,6 +45,7 @@ function App() {
             <Route exact path='/favorite-tracks' component={Favorites} />
             <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
           </Switch>
+          <Footer/>
         </>
       </Router>
     </ApolloProvider>
