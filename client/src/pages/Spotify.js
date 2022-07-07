@@ -28,7 +28,7 @@ const Spotify = () => {
 
                     <Modal.Body>
                         <SpotifyAuth
-                            redirectUri='http://localhost:3000/'
+                            redirectUri='https://aqueous-bayou-14461.herokuapp.com/'
                             clientID='d70a2585decd4d669c6434824b695fb4'
                             scopes={[Scopes.userReadPrivate, 'user-read-email']} // either style will work
                             onAccessToken={(token) => setToken(token)}
