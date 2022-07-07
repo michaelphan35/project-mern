@@ -38,7 +38,7 @@ Michael Phan: [github](https://github.com/michaelphan35)<br/>
 
 ## Screenshots
 ![Login Prompt](./media/spotify-authorization.jpg)
-![App on ttartup](./media/search-resultJPG.jpg)
+![App on ttartup](./media/saved-tracks.JPG)
 ![Image of song being saved on favorites](./media/saved-tracks.JPG)
 
 ## [Demo](https://aqueous-bayou-14461.herokuapp.com/)
